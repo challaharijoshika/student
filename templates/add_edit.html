@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div style="width: 400px;">
+
+        {% if mode == "add" %}
+        <h3 class="text-center mb-4">Add Student</h3>
+        {% else %}
+        <h3 class="text-center mb-4">Edit Student</h3>
+        {% endif %}
+
+        <form method="POST">
+
+            {% if mode == "add" %}
+            <input name="rollNo" class="form-control mb-2" placeholder="Roll Number" required>
+            {% else %}
+            <input value="{{ student.rollNo }}" class="form-control mb-2" disabled>
+            {% endif %}
+
+            <input name="name"
+                   value="{{ student.name if student else '' }}"
+                   class="form-control mb-2"
+                   placeholder="Student Name"
+                   required>
+
+            <input name="marks"
+                   value="{{ student.marks if student else '' }}"
+                   class="form-control mb-3"
+                   placeholder="Marks comma separated (eg: 80,90,70)"
+                   required>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-primary w-100">
+                    {% if mode == "add" %}Add{% else %}Update{% endif %}
+                </button>
+                <a href="/dashboard" class="btn btn-secondary w-100">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

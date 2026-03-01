@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<h3 class="mb-3">Admin Dashboard</h3>
+
+<a href="/add" class="btn btn-success mb-3">Add Student</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>Total</th>
+        <th>Percentage</th>
+        <th>Grade</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for s in students %}
+    <tr>
+        <td>{{ s.rollNo }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.marks }}</td>
+        <td>{{ s.totalMarks }}</td>
+        <td>{{ "%.1f"|format(s.percentage) }}%</td>
+        <td>{{ s.grade }}</td>
+        <td>
+            <a href="/edit/{{ s.rollNo }}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="/delete/{{ s.rollNo }}" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

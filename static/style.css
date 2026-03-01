@@ -1,0 +1,140 @@
+/* ---------- GLOBAL ---------- */
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    background: rgba(0,0,0,0.7) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar .btn {
+    margin-left: 8px;
+    border-radius: 8px;
+}
+
+/* ---------- GLASS CARD ---------- */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ---------- DASHBOARD HEADINGS ---------- */
+h2 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* ---------- LOGIN PAGE ---------- */
+form {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+form h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input.form-control {
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    border-radius: 8px !important;
+    font-weight: 600;
+}
+
+/* ---------- TABLE ---------- */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #343a40;
+    color: white;
+}
+
+/* ---------- ADD STUDENT FORM ---------- */
+.container form input {
+    margin-bottom: 12px;
+}
+
+/* ---------- DASHBOARD CARDS COLORS ---------- */
+.bg-primary {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed) !important;
+}
+
+.bg-success {
+    background: linear-gradient(45deg, #56ab2f, #a8e063) !important;
+}
+
+.bg-warning {
+    background: linear-gradient(45deg, #f7971e, #ffd200) !important;
+    color: black !important;
+}
+/* ===== Page Background ===== */
+body {
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Page Title ===== */
+.main-title {
+    color: #1e293b;
+}
+
+/* ===== Horizontal Card Layout ===== */
+.card-row {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* ===== Card Styling ===== */
+.card {
+    border-radius: 18px;
+    transition: 0.3s ease;
+    min-width: 300px;
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+    border-radius: 10px;
+}
+
+.btn-success {
+    border-radius: 10px;
+}
+body {
+    background-color: #f4f6fb;   /* light soft background */
+    min-height: 100vh;
+}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .login-container {
+        height: 100vh;
+        display: flex;
+    }
+
+    /* Left Section (Form) */
+    .left-section {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8f9fa;
+    }
+
+    .login-box {
+        width: 320px;
+    }
+
+    .login-box h2 {
+        font-weight: bold;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    /* Right Section (Image) */
+    .right-section {
+        width: 50%;
+        background: url("{{ url_for('static', filename='stu.png') }}") no-repeat center center/cover;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .login-container {
+            flex-direction: column;
+        }
+
+        .left-section, .right-section {
+            width: 100%;
+            height: 50vh;
+        }
+    }
+</style>
+
+<div class="login-container">
+
+    <!-- Left Side (Login Form) -->
+    <div class="left-section">
+        <div class="login-box">
+            <h2>🔐 Admin Login</h2>
+
+            <form method="POST">
+                <input name="username" class="form-control mb-3" placeholder="Username" required>
+                <input name="password" type="password" class="form-control mb-3" placeholder="Password" required>
+                <button class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Right Side (Image) -->
+    <div class="right-section"></div>
+
+</div>
+
+{% endblock %}

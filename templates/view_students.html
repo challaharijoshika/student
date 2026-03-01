@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<h2>All Students</h2>
+
+<table class="table table-bordered">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Subject</th>
+<th>Marks</th>
+</tr>
+
+{% for row in data %}
+<tr>
+<td>{{row[0]}}</td>
+<td>{{row[1]}}</td>
+<td>{{row[2]}}</td>
+<td>{{row[3]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

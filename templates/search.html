@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div style="width: 450px;">
+
+        <h3 class="text-center mb-4">Search Student Result</h3>
+
+        <form method="POST" class="mb-4">
+            <input name="rollNo" class="form-control mb-2" placeholder="Enter Roll Number" required>
+            <button class="btn btn-primary w-100">Search</button>
+        </form>
+
+        {% if student %}
+        <div class="card p-3 mb-3">
+            <h5 class="text-center">{{ student.name }}</h5>
+            <p><b>Roll No:</b> {{ student.rollNo }}</p>
+            <p><b>Marks:</b> {{ student.marks }}</p>
+            <p><b>Total:</b> {{ student.totalMarks }}</p>
+            <p><b>Percentage:</b> {{ "%.1f"|format(student.percentage) }}%</p>
+            <p><b>Grade:</b> {{ student.grade }}</p>
+        </div>
+        {% elif request.method == "POST" %}
+        <div class="alert alert-danger text-center">Student not found</div>
+        {% endif %}
+
+        <div class="text-center">
+            <a href="/login" class="btn btn-secondary">Admin Login</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
